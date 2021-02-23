@@ -1,45 +1,58 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			Planets: null,
+			PlanetsDetails: null,
+			Characters: null,
+			CharactersDetails: null,
+			Starships: null,
+			StarshipsDetails: null,
+			Favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			loadPlanets: url => {
+				fetch(url)
+					.then(response => response.json())
+					.then(response => setStore({ Planets: response }));
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			PlanetsInfo: theid => {
+				fetch("https://www.swapi.tech/api/planets/" + theid)
+					.then(response => response.json())
+					.then(response => setStore({ PlanetsDetails: response.result }));
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
+			loadCharacters: url => {
+				fetch(url)
+					.then(response => response.json())
+					.then(response => setStore({ Characters: response }));
+			},
+			CharactersInfo: theid => {
+				fetch("https://www.swapi.tech/api/people/" + theid)
+					.then(response => response.json())
+					.then(response => setStore({ CharactersDetails: response.result }));
+			},
+			loadStarships: url => {
+				fetch(url)
+					.then(response => response.json())
+					.then(response => setStore({ Starships: response }));
+			},
+			StarshipsInfo: theid => {
+				fetch("https://www.swapi.tech/api/starships/" + theid)
+					.then(response => response.json())
+					.then(response => setStore({ StarshipsDetails: response.result }));
+			},
+			addFavorites: Like => {
+				setStore({ Favorites: getStore().Favorites.concat(Like) });
+			},
+			delete: itemToDelete => {
+				console.log(itemToDelete);
+				setStore({
+					Favorites: getStore().Favorites.filter(item => {
+						return itemToDelete.uid !== item.uid;
+					})
 				});
-
-				//reset the global store
-				setStore({ demo: demo });
 			}
 		}
 	};
 };
-
 export default getState;

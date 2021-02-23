@@ -1,16 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<div>
+					<i className="fab fa-galactic-senate" />
+				</div>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
+
+			<div className="dropdown" style={{ marginRight: "50px" }}>
+				<button
+					className="btn btn-primary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false">
+					Favorites <strong>{store.Favorites.length}</strong>
+				</button>
+				<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					{store.Favorites.map((item, index) => {
+						return (
+							<div
+								style={{ justifyContent: "space-between" }}
+								className="d-flex contaienr -fluid"
+								key={item.uid}>
+								<p style={{ marginTop: "20px", marginLeft: "5px" }}>
+									<strong>{item.name}</strong>
+								</p>
+								<button
+									style={{ background: "none", border: "none" }}
+									onClick={() => actions.delete(item)}>
+									<i className="fas fa-times-circle" />
+								</button>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</nav>
 	);
