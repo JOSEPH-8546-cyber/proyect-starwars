@@ -45,7 +45,6 @@ const getState = ({ getStore, setStore }) => {
 				setStore({ Favorites: getStore().Favorites.concat(Like) });
 			},
 			delete: itemToDelete => {
-				console.log(itemToDelete);
 				setStore({
 					Favorites: getStore().Favorites.filter(item => {
 						return itemToDelete.uid !== item.uid;

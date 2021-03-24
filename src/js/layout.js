@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./views/home";
-
 import { PlanetsDates } from "./views/Detailsplanets";
 import { CharactersDates } from "./views/DetailsCharacters";
 import { StarshipsDates } from "./views/StarshipsDetails";
-
+import { BlockMainStarWars } from "./views/blockmainstarwars";
+import { Register } from "./views/register";
+import { Login } from "./views/Login";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 
@@ -23,6 +24,15 @@ const Layout = () => {
 				<Switch>
 					<Route exact path="/">
 						<Home />
+					</Route>
+					<Route exact path="/blockmainstarwars">
+						<BlockMainStarWars />
+					</Route>
+					<Route exact path="/register">
+						<Register />
+					</Route>
+					<Route exact path="/Login">
+						<Login />
 					</Route>
 					<Route exact path="/Detailsplanets/:theid">
 						<PlanetsDates />

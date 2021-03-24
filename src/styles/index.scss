@@ -1,11 +1,13 @@
 /* 
     General Styles
 */
-body {
-    background-image: url("https://thenerdsofcolor.files.wordpress.com/2020/01/ppcbvourk4u31.jpg");
-}
 
-   
+body {
+    background-image: url("https://images2.alphacoders.com/526/526202.jpg");
+}
+ 
+
+
 .navbar{
     background-image: url("https://images5.alphacoders.com/926/thumb-1920-926391.png");
 }
@@ -13,13 +15,44 @@ body {
     font-size: 55px;
 }
 
+.drop {
+    position: relative;
+    left: 550px;
+}
+
+
+
+
 h1 {
     color: red;
     position: relative;
     left: 10px
 }
 
+.h1{
+    color: #dfe96c;
+    position: relative;
+    left: 500px;
+}
+
+div.link{
+  color: #f7f6de;
+  font-size: 30px;
+  position: relative;
+  left: 10px;
+}
+
+.back{
+    color: #ff44fe;
+    font-size: 20px;
+}
+
+.contenedor1{
+    background-image: url("https://cdn.wallpapersafari.com/40/99/NKq6hT.jpg");
+}
+
 .container {
+    background-image: url("https://thenerdsofcolor.files.wordpress.com/2020/01/ppcbvourk4u31.jpg");
     display: flex;
     flex-direction: row;
     justify-content: flex-start
@@ -52,4 +85,96 @@ h1 {
     left: 500px;
     width: 600px;
     height: 500px;
+}
+
+
+
+/* register*/
+.hello{
+    background-color: yellow;
+    width: 500px;
+    left: 520px;
+    margin-top: 20px;
+}
+
+.form{
+    width: 380px;
+    position: relative;
+    left: 30px;
+    margin-top: 50px;
+}
+
+.check{
+    position: relative;
+    left: 30px;
+    margin-top: 100px;
+}
+
+.boton{
+    position: relative;
+    left: 30px;
+    margin-top: 50px;
+}
+
+.carta5{
+    background-color: #00ccff;
+    position: relative;
+    left: 250px;
+    height: 800px;
+    width: 550px;
+
+}
+
+.card-title {
+    font-size: 20px;
+    color: #0000ff;
+    
+
+}
+
+.form1{
+    width: 400px;
+    position: relative;
+    left: 30px;
+    margin-top: 50px;
+}
+
+/*
+Register
+*/
+
+.form2{
+    background-color: #77d4c1;
+    position: relative;
+    margin-top: 10px;
+    left:350px;
+    width: 900px;
+    height: 500px;
+}
+
+.colr{
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+.sword{
+    color: #7b1aec;
+    font-size: 200px;
+    position: relative;
+    left:650px;
+    top: -280px;
+}
+
+.register{
+    position: relative;
+    left: 360px;
+}
+
+.sword1{
+    color: #252440;
+    font-size: 200px;
+    position: relative;
+    left:650px;
+    top: -230px;
+
 }

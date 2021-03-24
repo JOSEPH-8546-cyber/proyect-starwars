@@ -6,13 +6,13 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
+			<Link to="/blockmainstarwars">
 				<div>
 					<i className="fab fa-galactic-senate" />
 				</div>
 			</Link>
 
-			<div className="dropdown" style={{ marginRight: "50px" }}>
+			<div className="dropdown drop" style={{ marginRight: "50px" }}>
 				<button
 					className="btn btn-primary dropdown-toggle"
 					type="button"
@@ -42,6 +42,16 @@ export const Navbar = () => {
 					})}
 				</div>
 			</div>
+			<Link to="/register">
+				<button type="button" className="btn btn-outline-danger register">
+					register here
+				</button>
+			</Link>
+			<Link to="/Login">
+				<button type="button" className="btn btn-primary">
+					Login
+				</button>
+			</Link>
 		</nav>
 	);
 };

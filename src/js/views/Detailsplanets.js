@@ -6,7 +6,6 @@ import { Context } from "../store/appContext";
 export const PlanetsDates = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	console.log(params.theid);
 	useEffect(
 		() => {
 			actions.PlanetsInfo(params.theid);

@@ -6,7 +6,6 @@ import { Context } from "../store/appContext";
 export const StarshipsDates = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	console.log(params.theid);
 	useEffect(
 		() => {
 			actions.StarshipsInfo(params.theid);
@@ -21,7 +20,7 @@ export const StarshipsDates = () => {
 					<div className="row g-0">
 						<div className="col-md-6">
 							<img
-								src="https://hipertextual.com/files/2019/12/hipertextual-mira-diseno-final-nave-porsche-star-wars-ascenso-skywalker-2019401507-scaled.jpg"
+								src="https://static2.abc.es/media/summum/2020/01/03/porsche-nave-2-kse--1200x630@abc.jpg"
 								className="img-fluid"
 								alt=" "
 							/>

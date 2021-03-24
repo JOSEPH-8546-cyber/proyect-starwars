@@ -6,7 +6,6 @@ import { Context } from "../store/appContext";
 export const CharactersDates = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	console.log(params.theid);
 	useEffect(
 		() => {
 			actions.CharactersInfo(params.theid);
